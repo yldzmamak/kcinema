@@ -12,7 +12,6 @@ import javax.persistence.Id;
 public class Company {
 
     @Id
-
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 
