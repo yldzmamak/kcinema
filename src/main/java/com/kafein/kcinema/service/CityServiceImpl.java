@@ -1,4 +1,7 @@
 package com.kafein.kcinema.service;
 
-public class CityServiceImpl {
+import com.kafein.kcinema.service.base.CityService;
+
+public class CityServiceImpl implements CityService{
+
 }
