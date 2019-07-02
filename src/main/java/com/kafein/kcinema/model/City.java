@@ -9,12 +9,11 @@ import javax.persistence.Id;
 
 @Data
 @Entity
-public class Company {
+public class City {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 
-    private String companyName;
-
+    private String cityName;
 }
