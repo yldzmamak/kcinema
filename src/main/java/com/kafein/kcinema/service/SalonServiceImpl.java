@@ -20,16 +20,16 @@ public class SalonServiceImpl implements SalonService {
 
     @Override
     public SalonDto save(SalonDto salonDto) {
-        return null;
+        return salonMapper.toSalonDto(salonRepository.save(salonMapper.toSalon(salonDto)));
     }
 
     @Override
     public List<SalonDto> findAll() {
-        return null;
+        return salonMapper.toSalonDtoList(salonRepository.findAll());
     }
 
     @Override
-    public SalonDto findByid() {
-        return null;
+    public SalonDto findById(int id) {
+        return salonMapper.toSalonDto(salonRepository.findById(id));
     }
 }

@@ -9,5 +9,5 @@ public interface SeatService {
 
     List<SeatDto> findAll();
 
-    SeatDto findByid();
+    SeatDto findById(int id);
 }

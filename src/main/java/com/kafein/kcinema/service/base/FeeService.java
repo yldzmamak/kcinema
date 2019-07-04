@@ -9,5 +9,5 @@ public interface FeeService {
 
     List<FeeDto> findAll();
 
-    FeeDto findByid();
+    FeeDto findById(int id);
 }

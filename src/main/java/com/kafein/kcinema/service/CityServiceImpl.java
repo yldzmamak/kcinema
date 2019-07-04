@@ -20,11 +20,16 @@ public class CityServiceImpl implements CityService{
 
     @Override
     public CityDto save(CityDto cityDto) {
-        return null;
+        return cityMapper.toCityDto(cityRepository.save(cityMapper.toCity(cityDto)));
     }
 
     @Override
     public List<CityDto> findAll() {
-        return null;
+        return cityMapper.toCityDtoList(cityRepository.findAll());
+    }
+
+    @Override
+    public CityDto findById(int id) {
+        return cityMapper.toCityDto(cityRepository.findById(id));
     }
 }

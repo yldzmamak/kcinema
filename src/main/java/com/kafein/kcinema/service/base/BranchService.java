@@ -9,5 +9,5 @@ public interface BranchService {
 
     List<BranchDto> findAll();
 
-    BranchDto findById(Integer id);
+    BranchDto findById(int id);
 }

@@ -20,16 +20,21 @@ public class DistrictServiceImpl implements DistrictService {
 
     @Override
     public DistrictDto save(DistrictDto districtDto) {
-        return null;
+        if(districtRepository.findByDistrictNameAndCity_Id(districtDto.getDistrictName(),districtDto.getCity().getId()) != null){
+            throw new IllegalArgumentException("Bu ilde aynı ilçeden iki tane olamaz.");
+        }
+        return districtMapper.toDistrictDto(districtRepository.save(districtMapper.toDistrict(districtDto)));
     }
 
     @Override
     public List<DistrictDto> findAll() {
-        return null;
+        return districtMapper.toDistrictDtoList(districtRepository.findAll());
     }
 
     @Override
-    public DistrictDto findByid() {
-        return null;
+    public DistrictDto findById(int id) {
+        return districtMapper.toDistrictDto(districtRepository.findById(id));
     }
+
+
 }

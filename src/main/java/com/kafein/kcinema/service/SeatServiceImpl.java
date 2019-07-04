@@ -20,16 +20,16 @@ public class SeatServiceImpl implements SeatService {
 
     @Override
     public SeatDto save(SeatDto seatDto) {
-        return null;
+        return seatMapper.toSeatDto(seatRepository.save(seatMapper.toSeat(seatDto)));
     }
 
     @Override
     public List<SeatDto> findAll() {
-        return null;
+        return seatMapper.toSeatDtoList(seatRepository.findAll());
     }
 
     @Override
-    public SeatDto findByid() {
-        return null;
+    public SeatDto findById(int id) {
+        return seatMapper.toSeatDto(seatRepository.findById(id));
     }
 }

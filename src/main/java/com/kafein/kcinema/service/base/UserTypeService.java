@@ -9,5 +9,5 @@ public interface UserTypeService {
 
     List<UserTypeDto> findAll();
 
-    UserTypeDto findByid();
+    UserTypeDto findById(int id);
 }

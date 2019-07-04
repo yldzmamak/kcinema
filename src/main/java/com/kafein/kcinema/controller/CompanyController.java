@@ -18,7 +18,7 @@ public class CompanyController {
     public List<CompanyDto> findAll() {
         List<CompanyDto> companyDto = companyService.findAll();
         if(companyDto.size() == 0){
-            throw new IllegalArgumentException("Şirket kayıtlı değil.");
+            throw new IllegalArgumentException("Herhangi bir şirket kayıtlı değil.");
         }
         return companyDto;
     }

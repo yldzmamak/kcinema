@@ -18,9 +18,9 @@ public interface BranchMapper {
     BranchDto toBranchDto(Branch branch);
 
     @IterableMapping(qualifiedByName = "toBranch")
-    List<Branch> toBranchList(List<Branch> branchList);
+    List<Branch> toBranchList(List<BranchDto> branchDtoList);
 
     @IterableMapping(qualifiedByName = "toBranchDto")
-    List<BranchDto> toBranchDtoList(List<BranchDto> branchDtoList);
+    List<BranchDto> toBranchDtoList(List<Branch> branchList);
 
 }

@@ -20,16 +20,16 @@ public class UserTypeServiceImpl implements UserTypeService {
 
     @Override
     public UserTypeDto save(UserTypeDto userTypeDto) {
-        return null;
+        return userTypeMapper.toUserTypeDto(userTypeRepository.save(userTypeMapper.toUserType(userTypeDto)));
     }
 
     @Override
     public List<UserTypeDto> findAll() {
-        return null;
+        return userTypeMapper.toUserTypeDtoList(userTypeRepository.findAll());
     }
 
     @Override
-    public UserTypeDto findByid() {
-        return null;
+    public UserTypeDto findById(int id) {
+        return userTypeMapper.toUserTypeDto(userTypeRepository.findById(id));
     }
 }

@@ -20,16 +20,16 @@ public class TicketServiceImpl implements TicketService {
 
     @Override
     public TicketDto save(TicketDto ticketDto) {
-        return null;
+        return ticketMapper.toTicketDto(ticketRepository.save(ticketMapper.toTicket(ticketDto)));
     }
 
     @Override
     public List<TicketDto> findAll() {
-        return null;
+        return ticketMapper.toTicketDtoList(ticketRepository.findAll());
     }
 
     @Override
-    public TicketDto findByid() {
-        return null;
+    public TicketDto findById(int id) {
+        return ticketMapper.toTicketDto(ticketRepository.findById(id));
     }
 }

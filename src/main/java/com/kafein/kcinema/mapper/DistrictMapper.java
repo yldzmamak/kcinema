@@ -19,9 +19,9 @@ public interface DistrictMapper {
     DistrictDto toDistrictDto(District district);
 
     @IterableMapping(qualifiedByName = "toDistrict")
-    List<District> toDistrict(List<District> districtList);
+    List<District> toDistrictList(List<DistrictDto> districtDtoList);
 
     @IterableMapping(qualifiedByName = "toDistrictDto")
-    List<DistrictDto> toDistrictDto(List<DistrictDto> districtDtoList);
+    List<DistrictDto> toDistrictDtoList(List<District> districtList);
 
 }

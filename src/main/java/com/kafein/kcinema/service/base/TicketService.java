@@ -9,5 +9,5 @@ public interface TicketService {
 
     List<TicketDto> findAll();
 
-    TicketDto findByid();
+    TicketDto findById(int id);
 }

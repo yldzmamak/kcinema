@@ -18,8 +18,8 @@ public interface CityMapper {
     CityDto toCityDto(City city);
 
     @IterableMapping(qualifiedByName = "toCity")
-    List<City> toCity(List<CityDto> cityDtoList);
+    List<City> toCityList(List<CityDto> cityDtoList);
 
     @IterableMapping(qualifiedByName = "toCityDto")
-    List<CityDto> toCityDto(List<City> cityList);
+    List<CityDto> toCityDtoList(List<City> cityList);
 }

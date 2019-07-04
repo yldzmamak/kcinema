@@ -8,4 +8,6 @@ public interface CityService {
     CityDto save(CityDto cityDto);
 
     List<CityDto> findAll();
+
+    CityDto findById(int id);
 }

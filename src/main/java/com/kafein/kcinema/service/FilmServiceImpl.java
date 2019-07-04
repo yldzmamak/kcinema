@@ -20,16 +20,16 @@ public class FilmServiceImpl implements FilmService {
 
     @Override
     public FilmDto save(FilmDto filmDto) {
-        return null;
+        return filmMapper.toFilmDto(filmRepository.save(filmMapper.toFilm(filmDto)));
     }
 
     @Override
     public List<FilmDto> findAll() {
-        return null;
+        return filmMapper.toFilmDtoList(filmRepository.findAll());
     }
 
     @Override
-    public FilmDto findByid() {
-        return null;
+    public FilmDto findById(int id) {
+        return filmMapper.toFilmDto(filmRepository.findById(id));
     }
 }

@@ -9,5 +9,5 @@ public interface SalonService {
 
     List<SalonDto> findAll();
 
-    SalonDto findByid();
+    SalonDto findById(int id);
 }

@@ -9,5 +9,5 @@ public interface UserService {
 
     List<UserDto> findAll();
 
-    UserDto findByid();
+    UserDto findById(int id);
 }

@@ -9,5 +9,5 @@ public interface FilmSalonService {
 
     List<FilmSalonDto> findAll();
 
-    FilmSalonDto findByid();
+    FilmSalonDto findById(int id);
 }

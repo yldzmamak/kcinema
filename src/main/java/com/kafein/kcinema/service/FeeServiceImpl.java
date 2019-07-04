@@ -20,16 +20,16 @@ public class FeeServiceImpl implements FeeService {
 
     @Override
     public FeeDto save(FeeDto feeDto) {
-        return null;
+        return feeMapper.toFeeDto(feeRepository.save(feeMapper.toFee(feeDto)));
     }
 
     @Override
     public List<FeeDto> findAll() {
-        return null;
+        return feeMapper.toFeeDtoList(feeRepository.findAll());
     }
 
     @Override
-    public FeeDto findByid() {
-        return null;
+    public FeeDto findById(int id) {
+        return feeMapper.toFeeDto(feeRepository.findById(id));
     }
 }

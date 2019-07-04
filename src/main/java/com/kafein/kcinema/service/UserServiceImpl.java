@@ -19,16 +19,16 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public UserDto save(UserDto userDto) {
-        return null;
+        return userMapper.toUserDto(userRepository.save(userMapper.toUser(userDto)));
     }
 
     @Override
     public List<UserDto> findAll() {
-        return null;
+        return userMapper.toUserDtoList(userRepository.findAll());
     }
 
     @Override
-    public UserDto findByid() {
-        return null;
+    public UserDto findById(int id) {
+        return userMapper.toUserDto(userRepository.findById(id));
     }
 }

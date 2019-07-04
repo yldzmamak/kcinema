@@ -20,16 +20,16 @@ public class BranchServiceImpl implements BranchService {
 
     @Override
     public BranchDto save(BranchDto branchDto) {
-        return null;
+        return branchMapper.toBranchDto(branchRepository.save(branchMapper.toBranch(branchDto)));
     }
 
     @Override
     public List<BranchDto> findAll() {
-        return null;
+        return branchMapper.toBranchDtoList(branchRepository.findAll());
     }
 
     @Override
-    public BranchDto findById(Integer id) {
-        return null;
+    public BranchDto findById(int id) {
+        return branchMapper.toBranchDto(branchRepository.findById(id));
     }
 }

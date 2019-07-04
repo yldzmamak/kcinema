@@ -10,5 +10,5 @@ public interface DistrictService {
 
     List<DistrictDto> findAll();
 
-    DistrictDto findByid();
+    DistrictDto findById(int id);
 }
