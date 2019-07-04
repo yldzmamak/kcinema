@@ -1,11 +1,13 @@
 package com.kafein.kcinema.service.base;
 
-import com.kafein.kcinema.model.Branch;
+import com.kafein.kcinema.dto.BranchDto;
 
 import java.util.List;
 
 public interface BranchService {
-    Branch save(Branch branch);
+    BranchDto save(BranchDto branchDto);
 
-    List<Branch> findAll();
+    List<BranchDto> findAll();
+
+    BranchDto findById(Integer id);
 }

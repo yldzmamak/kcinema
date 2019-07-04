@@ -1,10 +1,9 @@
 package com.kafein.kcinema.controller;
 
-import com.kafein.kcinema.model.Company;
+import com.kafein.kcinema.dto.CompanyDto;
 import com.kafein.kcinema.service.base.CompanyService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
-
 import java.util.List;
 
 @RestController
@@ -16,14 +15,27 @@ public class CompanyController {
 
     @ResponseBody
     @GetMapping
-    public List<Company> findAll() {
-        return companyService.findAll();
+    public List<CompanyDto> findAll() {
+        List<CompanyDto> companyDto = companyService.findAll();
+        if(companyDto.size() == 0){
+            throw new IllegalArgumentException("Şirket kayıtlı değil.");
+        }
+        return companyDto;
     }
 
     @ResponseBody
     @PostMapping
-    public Company save(@RequestBody Company company) {
-        return companyService.save(company);
+    public CompanyDto save(@RequestBody CompanyDto companyDto) {
+        return companyService.save(companyDto);
     }
 
+    @ResponseBody
+    @GetMapping("/findById")
+    public CompanyDto findById(@RequestParam("id") int id) {
+        CompanyDto companyDto = companyService.findById(id);
+        if(companyDto == null){
+            throw new IllegalArgumentException("Şirket bulunamadı.");
+        }
+        return companyDto;
+    }
 }

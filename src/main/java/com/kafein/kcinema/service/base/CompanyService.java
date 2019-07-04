@@ -1,12 +1,14 @@
 package com.kafein.kcinema.service.base;
 
-import com.kafein.kcinema.model.Company;
+import com.kafein.kcinema.dto.CompanyDto;
 
 import java.util.List;
 
 public interface CompanyService {
 
-    Company save(Company company);
+    CompanyDto save(CompanyDto companyDto);
 
-    List<Company> findAll();
+    List<CompanyDto> findAll();
+
+    CompanyDto findById(int id);
 }

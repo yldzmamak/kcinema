@@ -1,6 +1,7 @@
 package com.kafein.kcinema.service;
 
-import com.kafein.kcinema.model.Company;
+import com.kafein.kcinema.dto.CompanyDto;
+import com.kafein.kcinema.mapper.CompanyMapper;
 import com.kafein.kcinema.repository.CompanyRepository;
 import com.kafein.kcinema.service.base.CompanyService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,14 +15,21 @@ public class CompanyServiceImpl implements CompanyService {
     @Autowired
     private CompanyRepository companyRepository;
 
+    @Autowired
+    private CompanyMapper companyMapper;
+
     @Override
-    public Company save(Company company) {
-//        company.setName("yıldız");
-        return companyRepository.save(company);
+    public CompanyDto save(CompanyDto companyDto) {
+        return companyMapper.toCompanyDto(companyRepository.save(companyMapper.toCompany(companyDto)));
     }
 
     @Override
-    public List<Company> findAll() {
-        return companyRepository.findAll();
+    public List<CompanyDto> findAll() {
+        return companyMapper.toCompanyDtoList(companyRepository.findAll());
+    }
+
+    @Override
+    public CompanyDto findById(int id) {
+        return companyMapper.toCompanyDto(companyRepository.findById(id));
     }
 }
