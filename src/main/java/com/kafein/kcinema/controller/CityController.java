@@ -39,4 +39,10 @@ public class CityController {
     public CityDto save(@RequestBody CityDto cityDto){
         return cityService.save(cityDto);
     }
+
+    @ResponseBody
+    @DeleteMapping("/{id}")
+    public boolean delete(@PathVariable("id") int id){
+        return cityService.delete(id);
+    }
 }

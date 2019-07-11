@@ -11,4 +11,6 @@ public interface CityService {
 
     CityDto findById(int id);
 
+    Boolean delete(int id);
+
 }

@@ -32,4 +32,14 @@ public class CityServiceImpl implements CityService{
     public CityDto findById(int id) {
         return cityMapper.toCityDto(cityRepository.findById(id));
     }
+
+    @Override
+    public Boolean delete(int id) {
+        try {
+            cityRepository.deleteById(id);
+            return true;
+        }catch (Exception e){
+            return false;
+        }
+    }
 }
