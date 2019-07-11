@@ -11,4 +11,6 @@ public interface DistrictService {
     List<DistrictDto> findAll();
 
     DistrictDto findById(int id);
+
+    List<DistrictDto> findAllByCity_Id(int id);
 }

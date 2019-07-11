@@ -5,5 +5,6 @@ import lombok.Data;
 public class FilmDto {
     private int id;
     private String filmName;
-    private Float duration;
+    private int duration;
+    private CategoryDto category;
 }

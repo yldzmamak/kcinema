@@ -7,6 +7,7 @@ import com.kafein.kcinema.service.base.CompanyService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import javax.transaction.Transactional;
 import java.util.List;
 
 @Service
@@ -31,5 +32,17 @@ public class CompanyServiceImpl implements CompanyService {
     @Override
     public CompanyDto findById(int id) {
         return companyMapper.toCompanyDto(companyRepository.findById(id));
+    }
+
+    @Override
+    @Transactional
+    public Boolean delete(int id) {
+        try {
+            companyRepository.deleteById(id);
+            return true;
+        }catch (Exception e){
+            e.printStackTrace();
+            return false;
+        }
     }
 }

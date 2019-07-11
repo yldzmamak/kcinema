@@ -36,5 +36,10 @@ public class DistrictServiceImpl implements DistrictService {
         return districtMapper.toDistrictDto(districtRepository.findById(id));
     }
 
+    @Override
+    public List<DistrictDto> findAllByCity_Id(int id) {
+        return districtMapper.toDistrictDtoList(districtRepository.findAllByCity_Id(id));
+    }
+
 
 }

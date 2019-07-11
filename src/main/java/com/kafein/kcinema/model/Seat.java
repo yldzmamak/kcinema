@@ -12,6 +12,6 @@ public class Seat {
 
     private String seatName;
 
-    @ManyToOne
+    @ManyToOne(cascade = CascadeType.REMOVE)
     private Salon salon;
 }

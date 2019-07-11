@@ -26,8 +26,12 @@ public class FilmSalonController {
 
         @ResponseBody
         @PostMapping
-        public FilmSalonDto save(@RequestBody FilmSalonDto companyDto) {
-            return filmSalonService.save(companyDto);
+        public FilmSalonDto save(@RequestBody FilmSalonDto filmSalonDto) {
+            return filmSalonService.save(filmSalonDto);
+        }
+
+        public List<FilmSalonDto> findAllBySalonId(int salonId){
+            return filmSalonService.findAllBySalon_Id(salonId);
         }
 
         @ResponseBody

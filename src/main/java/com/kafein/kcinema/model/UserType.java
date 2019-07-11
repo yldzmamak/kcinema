@@ -13,4 +13,5 @@ public class UserType {
 
     private String name;
 
+
 }

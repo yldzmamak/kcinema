@@ -19,6 +19,6 @@ public class FilmSalon {
     @ManyToOne
     private Film film;
 
-    @ManyToOne
+    @ManyToOne(cascade = CascadeType.REMOVE)
     private Salon salon;
 }

@@ -10,4 +10,5 @@ public interface CityService {
     List<CityDto> findAll();
 
     CityDto findById(int id);
+
 }

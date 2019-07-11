@@ -41,4 +41,15 @@ public class DistrictController {
         }
         return districtDto;
     }
+
+    @ResponseBody
+    @GetMapping("/findAllByCity_Id")
+    public List<DistrictDto> findAllByCity_Id(@RequestParam("id") int id) {
+        List<DistrictDto> districtDto = districtService.findAllByCity_Id(id);
+        if(districtDto == null){
+            throw new IllegalArgumentException("İlçe bulunamadı.");
+        }
+        return districtDto;
+    }
+
 }

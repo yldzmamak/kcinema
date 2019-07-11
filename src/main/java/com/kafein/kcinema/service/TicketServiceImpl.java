@@ -2,6 +2,7 @@ package com.kafein.kcinema.service;
 
 import com.kafein.kcinema.dto.TicketDto;
 import com.kafein.kcinema.mapper.TicketMapper;
+import com.kafein.kcinema.model.Ticket;
 import com.kafein.kcinema.repository.TicketRepository;
 import com.kafein.kcinema.service.base.TicketService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -31,5 +32,15 @@ public class TicketServiceImpl implements TicketService {
     @Override
     public TicketDto findById(int id) {
         return ticketMapper.toTicketDto(ticketRepository.findById(id));
+    }
+
+    @Override
+    public List<Integer> findAllFullSeats(int film_salon_id) {
+        return ticketRepository.findAllFullSeats(film_salon_id);
+    }
+
+    @Override
+    public List<Integer> findAllEmptySeats(int film_salon_id) {
+        return ticketRepository.findAllEmptySeats(film_salon_id);
     }
 }

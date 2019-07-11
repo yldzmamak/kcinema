@@ -2,10 +2,8 @@ package com.kafein.kcinema.model;
 
 import lombok.Data;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
+import java.util.Set;
 
 @Data
 @Entity
@@ -16,5 +14,8 @@ public class Company {
     private int id;
 
     private String companyName;
+
+    @OneToMany(mappedBy = "company", cascade = CascadeType.REMOVE,fetch = FetchType.LAZY,orphanRemoval = true)
+    private Set<Branch> branchSet;
 
 }

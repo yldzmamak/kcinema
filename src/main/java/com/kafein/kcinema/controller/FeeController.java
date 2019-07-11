@@ -1,6 +1,10 @@
 package com.kafein.kcinema.controller;
 
 import com.kafein.kcinema.dto.FeeDto;
+import com.kafein.kcinema.mapper.FeeMapper;
+import com.kafein.kcinema.model.Fee;
+import com.kafein.kcinema.repository.CompanyRepository;
+import com.kafein.kcinema.repository.UserTypeRepository;
 import com.kafein.kcinema.service.base.FeeService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -13,6 +17,9 @@ public class FeeController {
 
     @Autowired
     private FeeService feeService;
+
+    @Autowired
+    private FeeMapper feeMapper;
 
     @ResponseBody
     @GetMapping

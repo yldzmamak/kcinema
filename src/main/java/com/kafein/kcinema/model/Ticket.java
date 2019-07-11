@@ -15,12 +15,12 @@ public class Ticket {
     @ManyToOne
     private User user;
 
-    @ManyToOne
+    @ManyToOne(cascade = CascadeType.REMOVE)
     private Fee fee;
 
-    @ManyToOne
+    @ManyToOne(cascade = CascadeType.REMOVE)
     private Seat seat;
 
-    @ManyToOne
+    @ManyToOne(cascade = CascadeType.REMOVE)
     private FilmSalon filmSalon;
 }

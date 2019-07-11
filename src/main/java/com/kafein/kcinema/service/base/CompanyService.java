@@ -11,4 +11,6 @@ public interface CompanyService {
     List<CompanyDto> findAll();
 
     CompanyDto findById(int id);
+
+    Boolean delete(int id);
 }

@@ -38,4 +38,11 @@ public class CompanyController {
         }
         return companyDto;
     }
+
+    @ResponseBody
+    @DeleteMapping("/findById")
+    public Boolean delete(@RequestParam("id") int id) {
+        return companyService.delete(id);
+    }
+
 }

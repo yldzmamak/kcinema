@@ -8,7 +8,7 @@ import org.mapstruct.Named;
 
 import java.util.List;
 
-@Mapper(componentModel = "spring")
+@Mapper(componentModel = "spring",uses = {RoleMapper.class})
 public interface UserMapper {
     @Named("toUser")
     User toUser(UserDto ticketDto);

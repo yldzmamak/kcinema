@@ -14,6 +14,6 @@ public class Salon {
 
     private String salonName;
 
-    @ManyToOne
+    @ManyToOne(cascade = CascadeType.REMOVE)
     private Branch branch;
 }

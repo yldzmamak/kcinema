@@ -2,10 +2,7 @@ package com.kafein.kcinema.model;
 
 import lombok.Data;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 @Entity
 @Data
@@ -15,5 +12,8 @@ public class Film {
     private int id;
 
     private String filmName;
-    private Float duration;
+    private int duration;
+
+    @ManyToOne
+    private Category category;
 }

@@ -25,8 +25,8 @@ public class FilmController {
 
     @ResponseBody
     @PostMapping
-    public FilmDto save(@RequestBody FilmDto companyDto) {
-        return filmService.save(companyDto);
+    public FilmDto save(@RequestBody FilmDto filmDto) {
+        return filmService.save(filmDto);
     }
 
     @ResponseBody

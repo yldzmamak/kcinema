@@ -14,7 +14,7 @@ public class Fee {
 
     private float price;
 
-    @ManyToOne
+    @ManyToOne(cascade = CascadeType.REMOVE)
     private Company company;
 
     @ManyToOne

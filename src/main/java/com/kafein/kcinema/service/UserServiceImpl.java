@@ -5,6 +5,7 @@ import com.kafein.kcinema.mapper.UserMapper;
 import com.kafein.kcinema.repository.UserRepository;
 import com.kafein.kcinema.service.base.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -17,8 +18,12 @@ public class UserServiceImpl implements UserService {
     @Autowired
     private UserMapper userMapper;
 
+    @Autowired
+    private BCryptPasswordEncoder bCryptPasswordEncoder;
+
     @Override
     public UserDto save(UserDto userDto) {
+        userDto.setPassword(bCryptPasswordEncoder.encode(userDto.getPassword()));
         return userMapper.toUserDto(userRepository.save(userMapper.toUser(userDto)));
     }
 
